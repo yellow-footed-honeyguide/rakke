@@ -1,6 +1,7 @@
 use std::env;
 
 mod init;
+mod add;
 
 fn main() {
     // Get command line arguments
@@ -9,7 +10,7 @@ fn main() {
     // Check if we have at least one command
     if args.len() < 2 {
         eprintln!("Usage: rakke <command>");
-        eprintln!("Available commands: init, --version");
+        eprintln!("Available commands: init, add, --version");
         return;
     }
     
@@ -23,10 +24,15 @@ fn main() {
             let init_args: Vec<String> = args[1..].to_vec();
             init::execute(init_args);
         }
+        "add" => {
+            // Pass arguments to init module for complete isolation
+            let init_args: Vec<String> = args[1..].to_vec();
+            add::execute(init_args);
+        }
         "--version" | "-v" => {
             // Show version information
-            println!("rakke version 0.1.0");
-            println!("Alternative Git implementation in Rust");
+            println!("rakke version {}", env!("CARGO_PKG_VERSION"));
+
         }
         _ => {
             // Unknown command

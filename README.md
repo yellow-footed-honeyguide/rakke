@@ -9,8 +9,9 @@ Alternative Git implementation written in Rust from scratch.
 ## Goal
 Fully compatible with standard Git repositories and workflows.
 
-## What is implemented now?
--  git init (with options: --help, --bare)
+## What is implemented now? Nothing... except:
+- git init (with options: --help, --bare)
+- git add  (no option are implemented)
 
 
 ## Author
