@@ -10,7 +10,7 @@ Alternative Git implementation written in Rust from scratch.
 Fully compatible with standard Git repositories and workflows.
 
 ## What is implemented now?
-Nothing
+-  git init (with options: --help, --bare)
 
 
 ## Author
